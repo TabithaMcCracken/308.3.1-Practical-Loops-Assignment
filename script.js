@@ -62,22 +62,22 @@ let csvData = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n6
 for (const char of csvData){
     if (char !== ',' && char !== '\n'){
         cell += char;
-        //console.log(cell)
     } 
 
     if(char ===','){
         row+=cell;
-        cell = "";
+        cell = ""; //Clears the cell
     }
 
     if(char === `\n`){
         row += cell;
         console.log(row);
-        cell = "";
-        row = "";
+        cell = ""; //Clears the cell
+        row = ""; //Clears the row
     }
 
 }
+// Prints the last row
 if (cell !== '') {
     row += `${cell}`;
     console.log(row);
